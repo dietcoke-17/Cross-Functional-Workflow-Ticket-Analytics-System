@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cross-Functional Workflow & Ticket Analytics System | Vendor Operations Optimizer</title>
+  <!-- Chart.js for data visualization -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Top Navigation Bar -->
+  <header class="navbar">
+    <div class="nav-brand">
+      <div class="brand-badge">PROD</div>
+      <div>
+        <h1 class="brand-title">Cross-Functional Workflow & Ticket Analytics System</h1>
+        <p class="brand-subtitle">Vendor Operations Workflow Optimizer &bull; Resource Allocation Engine</p>
+      </div>
+    </div>
+    <div class="nav-actions">
+      <div class="time-badge">Dataset: 10,500 Tickets (H1 2026)</div>
+      <a href="https://github.com/dietcoke-17/Cross-Functional-Workflow-Ticket-Analytics-System" target="_blank" class="github-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+        </svg>
+        GitHub Repo
+      </a>
+    </div>
+  </header>
+
+  <!-- Executive Summary Banner -->
+  <section class="kpi-grid">
+    <div class="kpi-card">
+      <div class="kpi-label">Analyzed Support Tickets</div>
+      <div class="kpi-value" id="kpi-tickets">10,500</div>
+      <div class="kpi-subtext positive">&uarr; 100% Operational Influx Coverage</div>
+    </div>
+
+    <div class="kpi-card highlight">
+      <div class="kpi-label">Onboarding Workflow Time</div>
+      <div class="kpi-value positive" id="kpi-cycle-red">-25.4%</div>
+      <div class="kpi-subtext">28.3h &rarr; 21.1h Cycle Reduction</div>
+    </div>
+
+    <div class="kpi-card">
+      <div class="kpi-label">Blocker Clearance Success</div>
+      <div class="kpi-value positive" id="kpi-clean-lift">+18.9%</div>
+      <div class="kpi-subtext">68.8% &rarr; 87.7% First-Pass Yield</div>
+    </div>
+
+    <div class="kpi-card">
+      <div class="kpi-label">SLA Breach Rate</div>
+      <div class="kpi-value" id="kpi-breach-drop">20.5%</div>
+      <div class="kpi-subtext positive">&darr; 8.1 pts (Down from 28.6%)</div>
+    </div>
+
+    <div class="kpi-card accent">
+      <div class="kpi-label">Annual Labor Cost Savings</div>
+      <div class="kpi-value" id="kpi-savings">$696,400</div>
+      <div class="kpi-subtext positive">Net 1-Yr Benefit (10.0 FTEs)</div>
+    </div>
+  </section>
+
+  <!-- Tab Navigation -->
+  <nav class="tabs-nav">
+    <button class="tab-btn active" data-tab="overview">Executive Overview</button>
+    <button class="tab-btn" data-tab="bottlenecks">SLA & Bottleneck Isolation</button>
+    <button class="tab-btn" data-tab="resource">Resource Allocation Engine</button>
+    <button class="tab-btn" data-tab="guesstimate">Guesstimate Financial ROI</button>
+    <button class="tab-btn" data-tab="sql">SQL Query Showcase</button>
+  </nav>
+
+  <!-- Tab 1: Executive Overview -->
+  <main class="tab-pane active" id="pane-overview">
+    <div class="grid-2-col">
+      <div class="chart-card">
+        <div class="card-header">
+          <h3>Month-over-Month Resolution & SLA Breach Inflection</h3>
+          <span class="badge">Q1 Baseline vs Q2 Optimized</span>
+        </div>
+        <p class="card-desc">Tracks SLA breach rate (%) and average resolution hours (hrs) across the 6-month evaluation timeline.</p>
+        <div class="chart-container">
+          <canvas id="monthlyTrendChart"></canvas>
+        </div>
+      </div>
+
+      <div class="chart-card">
+        <div class="card-header">
+          <h3>Department-Level Resolution Times</h3>
+          <span class="badge">Segmented via SQL CTEs</span>
+        </div>
+        <p class="card-desc">Average resolution hours vs. queue wait time across the 5 central functional departments.</p>
+        <div class="chart-container">
+          <canvas id="departmentChart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stakeholder Blocker Clearance Card -->
+    <div class="table-card">
+      <div class="card-header">
+        <h3>Cross-Functional Stakeholder Coordination (20% Clearance Lift)</h3>
+        <span class="badge-success">3 Key Stakeholders Aligned</span>
+      </div>
+      <p class="card-desc">Empirical proof of blocker removal and first-pass onboarding yield following SOP re-engineering with Legal, Finance, and Catalog teams.</p>
+      <div class="table-responsive">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Central Function</th>
+              <th>Key Bottlenecks Addressed</th>
+              <th>Baseline Clean Rate</th>
+              <th>Optimized Clean Rate</th>
+              <th>Net Improvement</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="stakeholderTableBody">
+            <!-- Populated via JS -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <!-- Tab 2: SLA & Bottlenecks -->
+  <main class="tab-pane" id="pane-bottlenecks">
+    <div class="grid-2-col">
+      <div class="chart-card">
+        <div class="card-header">
+          <h3>Onboarding Stage Latency Breakdown</h3>
+          <span class="badge">Queue Delay vs Active Handling</span>
+        </div>
+        <p class="card-desc">Isolates specific operational steps where delay accumulates. Stage 2 (KYC) and Stage 3 (Tax/Banking) drive 63% of total delay.</p>
+        <div class="chart-container">
+          <canvas id="stageChart"></canvas>
+        </div>
+      </div>
+
+      <div class="chart-card">
+        <div class="card-header">
+          <h3>Top Costliest Bottleneck Issues</h3>
+          <span class="badge">Labor Waste Impact</span>
+        </div>
+        <p class="card-desc">Identifies issues generating disproportionate manual touchpoints and escalation rework.</p>
+        <div class="chart-container">
+          <canvas id="topIssuesChart"></canvas>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Tab 3: Resource Allocation Engine -->
+  <main class="tab-pane" id="pane-resource">
+    <div class="grid-2-col">
+      <div class="chart-card">
+        <div class="card-header">
+          <h3>Hourly Ticket Influx vs Staffing Bandwidth</h3>
+          <span class="badge">10:00 - 15:00 Surge Window</span>
+        </div>
+        <p class="card-desc">Reveals why baseline uniform staffing failed: 67% of ticket influx occurs between 10 AM and 3 PM.</p>
+        <div class="chart-container">
+          <canvas id="hourlyArrivalChart"></canvas>
+        </div>
+      </div>
+
+      <div class="chart-card">
+        <div class="card-header">
+          <h3>Queue Backlog: Uniform vs Dynamic Reallocation</h3>
+          <span class="badge">59.8% Peak Queue Reduction</span>
+        </div>
+        <p class="card-desc">Simulation of ticket accumulation in queue under flat uniform staffing vs staggered shift dynamic allocation.</p>
+        <div class="chart-container">
+          <canvas id="queueSimulationChart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout-box">
+      <h4>How the Data-Backed Model Achieves the 25% Reduction with Zero Headcount:</h4>
+      <ul>
+        <li><strong>Transient Congestion Root Cause:</strong> In the baseline model, 35 staff were evenly distributed across 12 hours (~2.9 staff/hr). During the 10:00 - 15:00 surge, incoming volume (7.8 tickets/hr) outpaced capacity (4.1 tickets/hr), creating an accumulating backlog that cascaded across days.</li>
+        <li><strong>Staggered Shift Reallocation:</strong> Without hiring any additional headcount, staff schedules were redesigned into overlapping shifts (Early 08:00-16:30, Peak Booster Squad 09:30-18:00, Close 11:30-20:00), concentrating 5.25 staff/hr during peak hours.</li>
+        <li><strong>The Mathematical Result:</strong> Queue wait time dropped from 9.6h to 4.0h during peak (-58%), directly driving the verified 25.4% reduction in overall onboarding workflow turnaround time.</li>
+      </ul>
+    </div>
+  </main>
+
+  <!-- Tab 4: Guesstimate Financial ROI Calculator -->
+  <main class="tab-pane" id="pane-guesstimate">
+    <div class="calculator-grid">
+      <div class="calc-sidebar">
+        <h3>Interactive Guesstimate Parameters</h3>
+        <p class="calc-desc">Adjust operational assumptions to simulate financial cost savings and automation return on investment in real time.</p>
+
+        <div class="slider-group">
+          <label>Fully Loaded Hourly Rate ($/hr): <span id="val-rate">$35</span></label>
+          <input type="range" id="input-rate" min="20" max="60" value="35" step="1">
+        </div>
+
+        <div class="slider-group">
+          <label>Annual Ticket Volume: <span id="val-volume">10,500</span></label>
+          <input type="range" id="input-volume" min="5000" max="25000" value="10500" step="500">
+        </div>
+
+        <div class="slider-group">
+          <label>Manual Hours per Associate on Bottlenecks: <span id="val-hours">3.85 hrs</span></label>
+          <input type="range" id="input-hours" min="1.5" max="6.0" value="3.85" step="0.05">
+        </div>
+
+        <div class="slider-group">
+          <label>Automation Potential Yield: <span id="val-yield">75%</span></label>
+          <input type="range" id="input-yield" min="40" max="95" value="75" step="5">
+        </div>
+
+        <div class="slider-group">
+          <label>Tooling Implementation CapEx ($): <span id="val-capex">$65,000</span></label>
+          <input type="range" id="input-capex" min="25000" max="150000" value="65000" step="5000">
+        </div>
+      </div>
+
+      <div class="calc-results">
+        <h3>Guesstimate Financial Impact Summary</h3>
+        <div class="results-kpi-grid">
+          <div class="result-box">
+            <div class="res-label">Gross Cost of Operational Bottlenecks</div>
+            <div class="res-value" id="calc-gross-cost">$974,565</div>
+            <div class="res-sub">Annual associate labor wasted</div>
+          </div>
+          <div class="result-box highlight">
+            <div class="res-label">Annualized Automation Savings</div>
+            <div class="res-value positive" id="calc-savings">$730,924</div>
+            <div class="res-sub">Direct bottom-line efficiency</div>
+          </div>
+          <div class="result-box">
+            <div class="res-label">Net Year-1 Financial Benefit</div>
+            <div class="res-value positive" id="calc-net">$665,924</div>
+            <div class="res-sub">After deducting $65k CapEx</div>
+          </div>
+          <div class="result-box">
+            <div class="res-label">FTE Capacity Unlocked</div>
+            <div class="res-value" id="calc-fte">10.0 FTEs</div>
+            <div class="res-sub">Reinvestable in strategic growth</div>
+          </div>
+          <div class="result-box">
+            <div class="res-label">First-Year ROI</div>
+            <div class="res-value positive" id="calc-roi">1,024%</div>
+            <div class="res-sub">Return on invested capital</div>
+          </div>
+          <div class="result-box">
+            <div class="res-label">Capital Payback Period</div>
+            <div class="res-value" id="calc-payback">1.1 Months</div>
+            <div class="res-sub">Break-even milestone</div>
+          </div>
+        </div>
+
+        <div class="formula-box">
+          <h4>Guesstimate Mathematical Formulation:</h4>
+          <code>Cost of Bottleneck = (Annual Ticket Volume &times; % Bottleneck Rate) &times; (Manual Hours/Assoc &times; Avg Associates Involved) &times; Fully Loaded Hourly Wage</code>
+          <p>Proves execution excellence and business justification for workflow automation across central functions.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Tab 5: SQL Query Showcase -->
+  <main class="tab-pane" id="pane-sql">
+    <div class="sql-browser">
+      <div class="sql-selector">
+        <button class="sql-nav-btn active" data-sql="sla">02_sla_breach_analysis.sql</button>
+        <button class="sql-nav-btn" data-sql="bottleneck">03_bottleneck_isolation.sql</button>
+        <button class="sql-nav-btn" data-sql="cte">04_department_resolution_cte.sql</button>
+        <button class="sql-nav-btn" data-sql="peak">05_peak_hours_bandwidth.sql</button>
+        <button class="sql-nav-btn" data-sql="guesstimate">06_guesstimate_financial_cost.sql</button>
+        <button class="sql-nav-btn" data-sql="resource">07_resource_allocation_model.sql</button>
+      </div>
+
+      <div class="sql-display-card">
+        <div class="sql-header">
+          <div id="sql-title" class="sql-title">02_sla_breach_analysis.sql</div>
+          <button class="copy-btn" id="copySqlBtn">Copy SQL</button>
+        </div>
+        <p id="sql-desc" class="sql-desc">Measures SLA breach rates using date-time functions and conditional aggregations.</p>
+        <pre><code id="sqlCodeBlock" class="sql-code">-- SQL query will appear here</code></pre>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>Cross-Functional Workflow & Ticket Analytics System &bull; Designed for Central Operations & Vendor Management Excellence</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
