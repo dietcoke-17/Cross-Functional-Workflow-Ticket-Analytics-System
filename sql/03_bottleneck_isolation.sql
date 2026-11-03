@@ -84,3 +84,4 @@ JOIN BlockerClearanceByStakeholder o
  AND b.workflow_phase = 'Baseline (Q1 2026)'
  AND o.workflow_phase = 'Optimized (Q2 2026)'
 ORDER BY net_improvement_percentage_points DESC;
+

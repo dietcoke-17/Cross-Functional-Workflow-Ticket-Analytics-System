@@ -77,3 +77,4 @@ SELECT
 FROM operational_tickets
 GROUP BY onboarding_stage
 ORDER BY onboarding_stage ASC;
+

@@ -170,3 +170,4 @@ This project demonstrates the power of combining **advanced SQL analytics**, **q
 1. **Automate Document Extraction (OCR):** Roll out automated document verification across all vendor tiers.
 2. **Implement Real-Time Influx Alerting:** Embed the SQL peak hour queries into scheduled cron alerts to notify team leads when queue backlog exceeds 5 tickets.
 3. **Expand Dynamic Scheduling to Tier 2/3 Support:** Apply the same shift reallocation model to customer support and partner logistics.
+

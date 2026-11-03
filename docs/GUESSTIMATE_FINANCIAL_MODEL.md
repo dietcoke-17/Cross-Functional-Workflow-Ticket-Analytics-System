@@ -76,3 +76,4 @@ Rather than terminating operational staff, the **10.0 FTEs of unlocked capacity*
 1. **Tier 1 Strategic Vendor Relationship Management:** Proactive onboarding for high-GMV enterprise vendors.
 2. **Catalog Quality Assurance:** Manual spot-checks on high-value product categories.
 3. **Exception Management:** Rapid white-glove resolution of genuine legal exceptions and compliance flags.
+

@@ -108,3 +108,4 @@ FROM operational_tickets
 GROUP BY issue_type, department
 ORDER BY total_financial_waste_usd DESC
 LIMIT 5;
+

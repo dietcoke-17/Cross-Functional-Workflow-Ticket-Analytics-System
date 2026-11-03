@@ -88,3 +88,4 @@ SELECT
         ELSE 0 
     END AS is_clean_execution
 FROM operational_tickets;
+

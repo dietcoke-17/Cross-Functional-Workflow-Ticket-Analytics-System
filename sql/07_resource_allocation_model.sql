@@ -115,3 +115,4 @@ SELECT
         1
     ) AS queue_wait_reduction_pct
 FROM operational_tickets;
+

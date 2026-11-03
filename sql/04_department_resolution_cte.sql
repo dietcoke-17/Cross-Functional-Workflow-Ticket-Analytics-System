@@ -107,3 +107,4 @@ SELECT
     cross_system_latency_rank
 FROM RankedDepartmentIssues
 ORDER BY department ASC, dept_latency_rank ASC;
+

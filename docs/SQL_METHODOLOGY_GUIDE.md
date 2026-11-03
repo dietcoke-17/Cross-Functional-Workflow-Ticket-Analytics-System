@@ -191,3 +191,4 @@ To ensure sub-second query performance on 10,000+ rows, strategic composite inde
 | `idx_tickets_peak` | `(is_peak_hour, created_hour)` | Hourly arrival distributions and queue simulation queries |
 
 Execution plan verification (`EXPLAIN QUERY PLAN`) confirms that all major analytical queries execute using index scans and temporary B-trees, completing full analysis of 10,500 records in under **120 milliseconds**.
+

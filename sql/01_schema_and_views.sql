@@ -62,3 +62,4 @@ SELECT
 FROM v_ticket_analytics_base
 GROUP BY workflow_phase
 ORDER BY workflow_phase;
+
