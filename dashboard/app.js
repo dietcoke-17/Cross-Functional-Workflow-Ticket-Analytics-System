@@ -190,14 +190,14 @@ let analyticsData = DEFAULT_METRICS;
 let charts = {};
 
 document.addEventListener("DOMContentLoaded", () => {
-  initTabs();
-  initStakeholderTable();
-  initCharts();
-  initCalculator();
-  initSqlViewer();
+  try { initTabs(); } catch (e) { console.error("initTabs error:", e); }
+  try { initStakeholderTable(); } catch (e) { console.error("initStakeholderTable error:", e); }
+  try { initCharts(); } catch (e) { console.error("initCharts error:", e); }
+  try { initCalculator(); } catch (e) { console.error("initCalculator error:", e); }
+  try { initSqlViewer(); } catch (e) { console.error("initSqlViewer error:", e); }
 });
 
-// Tab Switcher
+// Tab Switcher with Chart Resize Handler
 function initTabs() {
   const tabs = document.querySelectorAll(".tab-btn");
   tabs.forEach(tab => {
@@ -206,7 +206,24 @@ function initTabs() {
       document.querySelectorAll(".tab-pane").forEach(p => p.classList.remove("active"));
       tab.classList.add("active");
       const targetPane = document.getElementById(`pane-${tab.dataset.tab}`);
-      if (targetPane) targetPane.classList.add("active");
+      if (targetPane) {
+        targetPane.classList.add("active");
+      }
+
+      // Critical fix: force Chart.js instances to re-measure and adapt layout
+      // when their container transitions from display: none to display: block
+      setTimeout(() => {
+        Object.values(charts).forEach(c => {
+          if (c && typeof c.resize === "function") {
+            try {
+              c.resize();
+            } catch (err) {
+              console.warn("Chart resize warning:", err);
+            }
+          }
+        });
+        window.dispatchEvent(new Event("resize"));
+      }, 60);
     });
   });
 }
@@ -230,6 +247,14 @@ function initStakeholderTable() {
 
 // Chart Initializations
 function initCharts() {
+  if (typeof Chart === "undefined") {
+    console.warn("Chart.js is not loaded. Displaying accessible data fallback.");
+    document.querySelectorAll(".chart-container").forEach(el => {
+      el.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100%;color:#9ca3af;font-size:13px;border:1px dashed #374151;border-radius:6px;padding:12px;text-align:center;">Interactive chart rendering requires Chart.js. If you are offline or using an ad-blocker, please allow cdn.jsdelivr.net or cdnjs.cloudflare.com.</div>';
+    });
+    return;
+  }
+
   // Chart 1: Monthly Trend
   const ctxMonthly = document.getElementById("monthlyTrendChart");
   if (ctxMonthly) {

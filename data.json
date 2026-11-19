@@ -1,0 +1,426 @@
+{
+  "kpis": {
+    "total_tickets": 10500,
+    "baseline_avg_hours": 28.32,
+    "optimized_avg_hours": 21.12,
+    "cycle_time_reduction_pct": 25.4,
+    "baseline_breach_rate": 28.6,
+    "optimized_breach_rate": 20.5,
+    "breach_rate_drop_pts": 8.1,
+    "baseline_clean_rate": 68.8,
+    "optimized_clean_rate": 87.7,
+    "clean_rate_lift_pts": 18.9,
+    "bottleneck_hours": 30246.5,
+    "bottleneck_cost_usd": 1058627.15,
+    "automation_savings_usd": 793970.36,
+    "net_benefit_usd": 728970.36
+  },
+  "monthly_trend": [
+    {
+      "month": "2026-01",
+      "workflow_phase": "Baseline (Q1 2026)",
+      "volume": 1769,
+      "avg_hours": 28.4,
+      "breach_rate": 29.6
+    },
+    {
+      "month": "2026-02",
+      "workflow_phase": "Baseline (Q1 2026)",
+      "volume": 1680,
+      "avg_hours": 28.4,
+      "breach_rate": 27.7
+    },
+    {
+      "month": "2026-03",
+      "workflow_phase": "Baseline (Q1 2026)",
+      "volume": 1784,
+      "avg_hours": 28.2,
+      "breach_rate": 28.4
+    },
+    {
+      "month": "2026-04",
+      "workflow_phase": "Optimized (Q2 2026)",
+      "volume": 1683,
+      "avg_hours": 21.2,
+      "breach_rate": 20.5
+    },
+    {
+      "month": "2026-05",
+      "workflow_phase": "Optimized (Q2 2026)",
+      "volume": 1840,
+      "avg_hours": 20.2,
+      "breach_rate": 18.6
+    },
+    {
+      "month": "2026-06",
+      "workflow_phase": "Optimized (Q2 2026)",
+      "volume": 1744,
+      "avg_hours": 22.0,
+      "breach_rate": 22.6
+    }
+  ],
+  "departments": [
+    {
+      "department": "Legal & Compliance",
+      "total_tickets": 2442,
+      "avg_hours": 33.4,
+      "avg_queue_wait": 5.7,
+      "breach_rate_pct": 36.9,
+      "financial_labor_waste_usd": 450382.45
+    },
+    {
+      "department": "Finance & Accounting",
+      "total_tickets": 2361,
+      "avg_hours": 28.3,
+      "avg_queue_wait": 5.7,
+      "breach_rate_pct": 28.5,
+      "financial_labor_waste_usd": 363839.7
+    },
+    {
+      "department": "Catalog & Operations",
+      "total_tickets": 2528,
+      "avg_hours": 22.4,
+      "avg_queue_wait": 5.5,
+      "breach_rate_pct": 20.4,
+      "financial_labor_waste_usd": 323384.95
+    },
+    {
+      "department": "Technical Support",
+      "total_tickets": 1626,
+      "avg_hours": 17.4,
+      "avg_queue_wait": 5.6,
+      "breach_rate_pct": 16.5,
+      "financial_labor_waste_usd": 184324.35
+    },
+    {
+      "department": "Central Vendor Operations",
+      "total_tickets": 1543,
+      "avg_hours": 17.0,
+      "avg_queue_wait": 5.6,
+      "breach_rate_pct": 14.1,
+      "financial_labor_waste_usd": 170661.05
+    }
+  ],
+  "stages": [
+    {
+      "onboarding_stage": "1. Intake & Identity Verification",
+      "volume": 1227,
+      "avg_queue_hours": 5.6,
+      "avg_handling_hours": 11.2,
+      "avg_total_hours": 16.9,
+      "breach_rate_pct": 14.8
+    },
+    {
+      "onboarding_stage": "2. Legal & Compliance KYC",
+      "volume": 2442,
+      "avg_queue_hours": 5.7,
+      "avg_handling_hours": 27.7,
+      "avg_total_hours": 33.4,
+      "breach_rate_pct": 36.9
+    },
+    {
+      "onboarding_stage": "3. Banking & Tax Validation",
+      "volume": 2361,
+      "avg_queue_hours": 5.7,
+      "avg_handling_hours": 22.5,
+      "avg_total_hours": 28.3,
+      "breach_rate_pct": 28.5
+    },
+    {
+      "onboarding_stage": "4. Catalog & Inventory Ingestion",
+      "volume": 3557,
+      "avg_queue_hours": 5.5,
+      "avg_handling_hours": 15.5,
+      "avg_total_hours": 21.1,
+      "breach_rate_pct": 19.6
+    },
+    {
+      "onboarding_stage": "5. Final Contract & Activation",
+      "volume": 913,
+      "avg_queue_hours": 5.5,
+      "avg_handling_hours": 11.4,
+      "avg_total_hours": 16.9,
+      "breach_rate_pct": 13.5
+    }
+  ],
+  "hourly_distribution": [
+    {
+      "created_hour": 0,
+      "tickets_created": 82,
+      "volume_pct": 0.78,
+      "avg_queue_wait": 3.71,
+      "proposed_staff": 0.25,
+      "baseline_staff": 0.5
+    },
+    {
+      "created_hour": 1,
+      "tickets_created": 100,
+      "volume_pct": 0.95,
+      "avg_queue_wait": 2.93,
+      "proposed_staff": 0.25,
+      "baseline_staff": 0.5
+    },
+    {
+      "created_hour": 2,
+      "tickets_created": 120,
+      "volume_pct": 1.14,
+      "avg_queue_wait": 2.92,
+      "proposed_staff": 0.25,
+      "baseline_staff": 0.5
+    },
+    {
+      "created_hour": 3,
+      "tickets_created": 98,
+      "volume_pct": 0.93,
+      "avg_queue_wait": 3.2,
+      "proposed_staff": 0.25,
+      "baseline_staff": 0.5
+    },
+    {
+      "created_hour": 4,
+      "tickets_created": 104,
+      "volume_pct": 0.99,
+      "avg_queue_wait": 3.05,
+      "proposed_staff": 0.25,
+      "baseline_staff": 0.5
+    },
+    {
+      "created_hour": 5,
+      "tickets_created": 102,
+      "volume_pct": 0.97,
+      "avg_queue_wait": 3.09,
+      "proposed_staff": 0.25,
+      "baseline_staff": 0.5
+    },
+    {
+      "created_hour": 6,
+      "tickets_created": 192,
+      "volume_pct": 1.83,
+      "avg_queue_wait": 3.3,
+      "proposed_staff": 0.25,
+      "baseline_staff": 0.5
+    },
+    {
+      "created_hour": 7,
+      "tickets_created": 388,
+      "volume_pct": 3.7,
+      "avg_queue_wait": 3.01,
+      "proposed_staff": 0.25,
+      "baseline_staff": 0.5
+    },
+    {
+      "created_hour": 8,
+      "tickets_created": 570,
+      "volume_pct": 5.43,
+      "avg_queue_wait": 3.35,
+      "proposed_staff": 2.5,
+      "baseline_staff": 2.92
+    },
+    {
+      "created_hour": 9,
+      "tickets_created": 784,
+      "volume_pct": 7.47,
+      "avg_queue_wait": 3.22,
+      "proposed_staff": 2.5,
+      "baseline_staff": 2.92
+    },
+    {
+      "created_hour": 10,
+      "tickets_created": 1369,
+      "volume_pct": 13.04,
+      "avg_queue_wait": 6.74,
+      "proposed_staff": 5.25,
+      "baseline_staff": 2.92
+    },
+    {
+      "created_hour": 11,
+      "tickets_created": 1463,
+      "volume_pct": 13.93,
+      "avg_queue_wait": 6.84,
+      "proposed_staff": 5.25,
+      "baseline_staff": 2.92
+    },
+    {
+      "created_hour": 12,
+      "tickets_created": 1273,
+      "volume_pct": 12.12,
+      "avg_queue_wait": 6.64,
+      "proposed_staff": 5.25,
+      "baseline_staff": 2.92
+    },
+    {
+      "created_hour": 13,
+      "tickets_created": 1237,
+      "volume_pct": 11.78,
+      "avg_queue_wait": 6.96,
+      "proposed_staff": 5.25,
+      "baseline_staff": 2.92
+    },
+    {
+      "created_hour": 14,
+      "tickets_created": 1098,
+      "volume_pct": 10.46,
+      "avg_queue_wait": 6.91,
+      "proposed_staff": 5.25,
+      "baseline_staff": 2.92
+    },
+    {
+      "created_hour": 15,
+      "tickets_created": 591,
+      "volume_pct": 5.63,
+      "avg_queue_wait": 6.88,
+      "proposed_staff": 2.5,
+      "baseline_staff": 2.92
+    },
+    {
+      "created_hour": 16,
+      "tickets_created": 370,
+      "volume_pct": 3.52,
+      "avg_queue_wait": 3.22,
+      "proposed_staff": 2.5,
+      "baseline_staff": 2.92
+    },
+    {
+      "created_hour": 17,
+      "tickets_created": 203,
+      "volume_pct": 1.93,
+      "avg_queue_wait": 3.24,
+      "proposed_staff": 1.4,
+      "baseline_staff": 2.92
+    },
+    {
+      "created_hour": 18,
+      "tickets_created": 110,
+      "volume_pct": 1.05,
+      "avg_queue_wait": 3.14,
+      "proposed_staff": 1.4,
+      "baseline_staff": 2.92
+    },
+    {
+      "created_hour": 19,
+      "tickets_created": 58,
+      "volume_pct": 0.55,
+      "avg_queue_wait": 3.19,
+      "proposed_staff": 1.4,
+      "baseline_staff": 2.92
+    },
+    {
+      "created_hour": 20,
+      "tickets_created": 48,
+      "volume_pct": 0.46,
+      "avg_queue_wait": 2.83,
+      "proposed_staff": 0.25,
+      "baseline_staff": 0.5
+    },
+    {
+      "created_hour": 21,
+      "tickets_created": 46,
+      "volume_pct": 0.44,
+      "avg_queue_wait": 3.67,
+      "proposed_staff": 0.25,
+      "baseline_staff": 0.5
+    },
+    {
+      "created_hour": 22,
+      "tickets_created": 43,
+      "volume_pct": 0.41,
+      "avg_queue_wait": 2.64,
+      "proposed_staff": 0.25,
+      "baseline_staff": 0.5
+    },
+    {
+      "created_hour": 23,
+      "tickets_created": 51,
+      "volume_pct": 0.49,
+      "avg_queue_wait": 3.25,
+      "proposed_staff": 0.25,
+      "baseline_staff": 0.5
+    }
+  ],
+  "stakeholder_clearance": [
+    {
+      "department": "Catalog & Operations",
+      "baseline_clean_rate": 68.0,
+      "optimized_clean_rate": 87.9,
+      "lift_percentage_points": 19.9
+    },
+    {
+      "department": "Finance & Accounting",
+      "baseline_clean_rate": 69.2,
+      "optimized_clean_rate": 87.6,
+      "lift_percentage_points": 18.4
+    },
+    {
+      "department": "Legal & Compliance",
+      "baseline_clean_rate": 69.7,
+      "optimized_clean_rate": 87.4,
+      "lift_percentage_points": 17.7
+    }
+  ],
+  "top_issues": [
+    {
+      "issue_type": "KYC Document Defect",
+      "department": "Legal & Compliance",
+      "count": 1122,
+      "avg_hours": 33.1,
+      "breach_rate": 35.7,
+      "bottleneck_cost_usd": 200906.65
+    },
+    {
+      "issue_type": "SKU Catalog Format Error",
+      "department": "Catalog & Operations",
+      "count": 1287,
+      "avg_hours": 22.2,
+      "breach_rate": 20.1,
+      "bottleneck_cost_usd": 165313.4
+    },
+    {
+      "issue_type": "Bank Account Verification Failure",
+      "department": "Finance & Accounting",
+      "count": 1038,
+      "avg_hours": 28.0,
+      "breach_rate": 28.7,
+      "bottleneck_cost_usd": 158827.2
+    },
+    {
+      "issue_type": "Contract Redlining & Term Exception",
+      "department": "Legal & Compliance",
+      "count": 817,
+      "avg_hours": 34.3,
+      "breach_rate": 39.3,
+      "bottleneck_cost_usd": 157605.7
+    },
+    {
+      "issue_type": "Tax Form Discrepancy (W-9/W-8BEN)",
+      "department": "Finance & Accounting",
+      "count": 981,
+      "avg_hours": 28.5,
+      "breach_rate": 28.3,
+      "bottleneck_cost_usd": 151953.2
+    },
+    {
+      "issue_type": "Barcode / GTIN Conflict",
+      "department": "Catalog & Operations",
+      "count": 753,
+      "avg_hours": 22.9,
+      "breach_rate": 21.5,
+      "bottleneck_cost_usd": 98697.9
+    },
+    {
+      "issue_type": "Regulatory Sanctions Check Alert",
+      "department": "Legal & Compliance",
+      "count": 503,
+      "avg_hours": 32.6,
+      "breach_rate": 36.0,
+      "bottleneck_cost_usd": 91870.1
+    },
+    {
+      "issue_type": "API Integration & Webhook Failure",
+      "department": "Technical Support",
+      "count": 625,
+      "avg_hours": 17.7,
+      "breach_rate": 17.1,
+      "bottleneck_cost_usd": 74018.0
+    }
+  ]
+}

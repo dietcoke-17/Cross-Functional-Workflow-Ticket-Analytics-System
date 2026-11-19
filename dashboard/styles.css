@@ -174,6 +174,19 @@ body {
   gap: 8px;
   border-bottom: 1px solid var(--border-color);
   margin-bottom: 24px;
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+
+.tabs-nav::-webkit-scrollbar {
+  height: 4px;
+}
+
+.tabs-nav::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
 }
 
 .tab-btn {
@@ -572,6 +585,51 @@ body {
   max-height: 480px;
   overflow-y: auto;
   white-space: pre;
+}
+
+/* Responsive Enhancements for Tablets & Mobile */
+@media (max-width: 768px) {
+  body {
+    padding: 16px 12px;
+  }
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .nav-brand {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .nav-actions {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .kpi-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .grid-2-col {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .calculator-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .sql-browser {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .chart-container {
+    height: 250px;
+    min-height: 250px;
+  }
 }
 
 /* Footer */

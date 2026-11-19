@@ -316,6 +316,12 @@ Verify that all 6 milestone claims and data integrity assertions pass:
 python3 -m unittest tests/test_analytics.py
 ```
 
+### 6. Deploying to Vercel
+The repository includes a production-ready `vercel.json` for one-click deployment:
+- **Root Directory:** `./` (default)
+- **Framework Preset:** Other (Static HTML)
+- Pre-configured rewrites automatically serve the executive dashboard at the root URL (`/`) and handle clean URLs (`/dashboard`).
+
 ---
 
 ## 📜 License & Acknowledgments
